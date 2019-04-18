@@ -15,6 +15,12 @@ class BoxController {
 
         return res.json(box);
     }
+
+    async showAll(req,res) {
+        const box = await Box.find().sort({createdAt: -1});
+
+        return res.json(box);
+    }
 }
 
 module.exports = new BoxController();
